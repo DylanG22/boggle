@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div id="game">
+<table id="game_table">
+{% for row in board %}
+<tr>
+{% for letter in row%}
+<td>{{letter}}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+</div>
+<form id="boggle_form">
+    <input type="text" placeholder="Word" id="boggle_word">
+    <button id="boggle_btn">Guess</button>
+</form>
+<div class="gameStats">
+<h3 id="scoreH3">Score: <p id="score">0</p></h3>
+<h3 id='timer_header'>Time: <p id="timer"></p></h3>
+<form action="/game">
+<button id="new_game">New Game</button>
+</form>
+</div>
+
+{% endblock %}
